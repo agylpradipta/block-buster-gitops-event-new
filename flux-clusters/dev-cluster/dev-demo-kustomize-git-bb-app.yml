@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: dev-demo-kustomize-git-bb-app
+  namespace: flux-system
+spec:
+  interval: 10s
+  path: ./manifests
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: dev-demo-source-git-bb-app
+  targetNamespace: dev-demo
